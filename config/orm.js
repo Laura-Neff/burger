@@ -10,21 +10,32 @@ var orm = {
       });
     },
 
+    insertOne: function(tableInput, id, burgerName, devoured) {
+        var queryString = "INSERT INTO ?? (?, ?, ?)";
+        console.log(queryString);
+        connection.query(queryString, [tableInput, id, burgerName, devoured], function(err, result) {
+          if (err) throw err;
+          console.log(result);
+        });
+      },
 
-
-
-function selectAll() {
-
-}
-
-function insertOne() {
+      updateOne: function(databaseName, tableInput, colName, value) {
+        var queryString = "UPDATE ?.?? SET ?? = ?";
     
-}
-
-function updateOne() {
+        connection.query(
+          queryString,
+          [databaseName,tableInput,colName,value],
+          function(err, result) {
+            if (err) throw err;
+            console.log(result);
+          }
     
-}
 
 
-};
+        );
+    }
+  };
+  
+  module.exports = orm;
+
   
