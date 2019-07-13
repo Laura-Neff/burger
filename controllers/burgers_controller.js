@@ -14,7 +14,19 @@ router.get("/", function(req, res) {
       console.log(hbsObject);
       res.render("index", hbsObject);
     });
+
+   
   });
+
+  router.post("/api/burgers", function(req, res) {
+    burger.insertOne([req.body.name], function(result) {
+        // Send back the ID of the new quote
+        res.json({ id: result.insertId });
+    });
+});
+
+ 
+
 
   
 
