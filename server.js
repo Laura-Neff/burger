@@ -34,6 +34,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
+
+
+
 // Start our server so that it can begin listening to client requests.
 // Listeners must be registered with the source object first
 app.listen(PORT, function() {

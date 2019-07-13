@@ -1,0 +1,25 @@
+
+
+<img src="http://www.pngmart.com/files/5/Hamburger-PNG-Image.png">
+
+<h1>Eat-Da-Burger</h1>
+
+ <button id="devour">Devour it!</button>
+
+
+  <div class="form-group" >
+    <input type="text" id="enterBurger" id="name" name="burger-name" rows="2" cols="40">
+  </div>
+
+
+<h3>
+  {{#each burgers}}
+    {{#burgers devoured}}
+      {{> burgers/burgers-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</h3>
+
+
+
+<button type="submit">Submit</button>
